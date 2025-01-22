@@ -1,4 +1,4 @@
-#Pour utiliser ce code il faudra : 
+# Pour utiliser ce code il faudra : 
 
 Créer une database dans le terminal via postgresql
 la nommé : housing
