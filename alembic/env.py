@@ -6,6 +6,7 @@ from app.models import Base
 from dotenv import load_dotenv
 import os
 import asyncio
+from app.database import Base
 
 # Charger les variables d'environnement
 load_dotenv()

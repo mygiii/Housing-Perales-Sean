@@ -1,7 +1,5 @@
-from sqlalchemy import Column, Float, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+from sqlalchemy import Column, Integer, Float, String
+from app.database import Base
 
 class House(Base):
     __tablename__ = "houses"
