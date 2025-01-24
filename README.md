@@ -12,12 +12,12 @@ mv .env.example .env
 
 ## here, i sugest you just put the same password as i did in your postgres database honestly
 Update a few files : 
-.env : update your_password
-    DATABASE_USER=postgres
-    DATABASE_PASSWORD=dinodu93
-    DATABASE_NAME=housing
-    DATABASE_HOST=db
-    DATABASE_PORT=5432
+    .env : update your_password
+        DATABASE_USER=postgres
+        DATABASE_PASSWORD=dinodu93
+        DATABASE_NAME=housing
+        DATABASE_HOST=db
+        DATABASE_PORT=5432
 Docker-compose.yml :
     in the two environments, there is a sections where put in a password, in DATABASE_PASSWORD & in POSTGRES__PASSWORD
 alembic.ini:
@@ -31,36 +31,36 @@ database.py :
 
 Run the following command to build and start the application using Docker Compose:
 
-docker-compose up --build
+    docker-compose up --build
 
 This command will:
 
-    Build the Docker containers for the application and the database.
-    Apply database migrations using Alembic.
-    Start the FastAPI server at http://localhost:8000.
+Build the Docker containers for the application and the database.    
+Apply database migrations using Alembic.
+Start the FastAPI server at http://localhost:8000.
 
 Usage
 Endpoints
 
-    Add a new house (POST)
-    Add a new house entry to the database.
+Add a new house (POST)
+Add a new house entry to the database.
 
-    Request:
+Request:
 
-curl -X POST http://localhost:8000/houses \
--H "Content-Type: application/json" \
--d '{
-    "longitude": -122.23,
-    "latitude": 37.88,
-    "housing_median_age": 41,
-    "total_rooms": 880,
-    "total_bedrooms": 129,
-    "population": 322,
-    "households": 126,
-    "median_income": 8.3252,
-    "median_house_value": 452600,
-    "ocean_proximity": "NEAR BAY"
-}'
+    curl -X POST http://localhost:8000/houses \
+    -H "Content-Type: application/json" \
+    -d '{
+        "longitude": -122.23,
+        "latitude": 37.88,
+        "housing_median_age": 41,
+        "total_rooms": 880,
+        "total_bedrooms": 129,
+        "population": 322,
+        "households": 126,
+        "median_income": 8.3252,
+        "median_house_value": 452600,
+        "ocean_proximity": "NEAR BAY"
+    }'
 
 Response:
 
@@ -83,7 +83,7 @@ Fetch all house entries from the database.
 
 Request:
 
-curl -X GET http://localhost:8000/houses
+    curl -X GET http://localhost:8000/houses
 
 Response:
 
