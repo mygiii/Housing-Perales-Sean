@@ -1,4 +1,4 @@
-Getting Started
+# Getting Started
 1. Clone the Repository
 
 git clone <repository_url>
@@ -10,13 +10,22 @@ cd Housing-Perales-Sean
 
 mv .env.example .env
 
-Update the .env file with your desired configuration:
-
+## here, i sugest you just put the same password as i did in your postgres database honestly
+Update a few files : 
+.env : update your_password
     DATABASE_USER=postgres
-    DATABASE_PASSWORD=your_password
+    DATABASE_PASSWORD=dinodu93
     DATABASE_NAME=housing
     DATABASE_HOST=db
     DATABASE_PORT=5432
+Docker-compose.yml :
+    in the two environments, there is a sections where put in a password, in DATABASE_PASSWORD & in POSTGRES__PASSWORD
+alembic.ini:
+    
+    sqlalchemy.url = postgresql+asyncpg://postgres:dinodu93@localhost/housing ----- here after "postgres:" put in your password
+database.py :
+    
+    DATABASE_URL = "postgresql+asyncpg://postgres:dinodu93@db:5432/housing" ---- here as well
 
 3. Build and Run the Application
 
